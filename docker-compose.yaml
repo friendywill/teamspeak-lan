@@ -20,4 +20,4 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${ROOT_PASS}
-      MYSQL_DATABASE: teamspeakalse
+      MYSQL_DATABASE: teamspeak
