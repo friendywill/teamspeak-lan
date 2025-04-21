@@ -15,9 +15,18 @@ services:
       TS3SERVER_DB_NAME: teamspeak
       TS3SERVER_DB_WAITUNTILREADY: 30
       TS3SERVER_LICENSE: accept
+    volumes:
+      - teamspeak:/var/ts3server
   db:
     image: mariadb
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${ROOT_PASS}
       MYSQL_DATABASE: teamspeak
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  db:
+    driver: local
+  teamspeak:
+    driver: local
